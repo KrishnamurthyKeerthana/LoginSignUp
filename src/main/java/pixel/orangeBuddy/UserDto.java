@@ -18,10 +18,10 @@ public class UserDto {
 
     private boolean isSurveyFilled;
 
-    private int loginCount;
+    //private int loginCount;
 
 
-    public UserDto(String SUID, String firstName, String lastName, String userName, String email, String password, boolean isSurveyFilled, int loginCount ) {
+    public UserDto(String SUID, String firstName, String lastName, String userName, String email, String password, boolean isSurveyFilled) {
         this.SUID = SUID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,7 +29,7 @@ public class UserDto {
         this.email = email;
         this.password = password;
         this.isSurveyFilled = isSurveyFilled;
-        this.loginCount = loginCount;
+        //this.loginCount = loginCount;
     }
 
     public String getFirstName() {
@@ -88,12 +88,12 @@ public class UserDto {
         isSurveyFilled = surveyFilled;
     }
 
-    public int getLoginCount() {
-        return loginCount;
-    }
-
-    public void setLoginCount(int loginCount) {
-        this.loginCount = loginCount;
-    }
+//    public int getLoginCount() {
+//        return loginCount;
+//    }
+//
+//    public void setLoginCount(int loginCount) {
+//        this.loginCount = loginCount;
+//    }
 }
 

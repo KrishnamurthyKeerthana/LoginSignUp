@@ -18,7 +18,7 @@ public class UserService {
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
         user.setSurveyFilled(userDto.isSurveyFilled());
-        user.setLoginCount(userDto.getLoginCount());
+        //user.setLoginCount(userDto.getLoginCount());
         return userRepository.save(user);
     }
 
@@ -43,6 +43,8 @@ public class UserService {
     public User save(User user) {
         return userRepository.save(user);
     }
+
+
 }
 
 

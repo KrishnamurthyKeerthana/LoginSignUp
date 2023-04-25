@@ -12,11 +12,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserServiceImpl userServiceImpl;
+
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody UserDto userDto) {
         User user = userService.registerUser(userDto);
         if (user != null) {
-            
             return ResponseEntity.ok("First Name: " + user.getFirstName() + " Last Name: " + user.getLastName());
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -31,19 +33,30 @@ public class UserController {
 
         if (isAuthenticated) {
             User user = userService.findByEmail(email);
-            int loginCount = user.getLoginCount();
+            //int loginCount = user.getLoginCount();
 
-            if (loginCount >= 1) {
-                user.setSurveyFilled(true);
-            }
-
-            user.setLoginCount(loginCount + 1);
+//            if (loginCount >= 1) {
+//                user.setSurveyFilled(true);
+//            }
+//
+//            user.setLoginCount(loginCount + 1);
             userService.save(user);
 
-            return ResponseEntity.ok("{login:successful, isSurveyFilled:" + user.isSurveyFilled() + "}");
+            return ResponseEntity.ok("{login:successful, isSurveyFilled:" + user.isSurveyFilled() + " userName: " + user.getUserName() + "}" );
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+    }
+
+
+    @PostMapping("/survey")
+    public ResponseEntity<String> updateSurveyStatus(@RequestBody UserSurvey userSurvey) {
+        String username = userSurvey.getUserName();
+        String email = userSurvey.getEmail();
+        boolean isSurveyFilled = userSurvey.isSurveyFilled();
+        System.out.println(username + email + isSurveyFilled);
+        userServiceImpl.updateSurveyStatus(username, email, isSurveyFilled);
+        return new ResponseEntity<>("Survey status updated successfully", HttpStatus.OK);
     }
 
 
