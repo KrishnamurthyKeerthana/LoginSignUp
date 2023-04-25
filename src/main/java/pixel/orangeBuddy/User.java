@@ -14,8 +14,9 @@ public class User {
     private String lastName;
     @Column(name = "user_name")
     private String userName;
-    @Column(unique = true)
+    @Column(name = "email", unique = true)
     private String email;
+    @Column(name = "password")
     private String password;
     private boolean isSurveyFilled;
 

@@ -16,7 +16,6 @@ public class UserController {
     public ResponseEntity<?> registerUser(@RequestBody UserDto userDto) {
         User user = userService.registerUser(userDto);
         if (user != null) {
-            
             return ResponseEntity.ok("First Name: " + user.getFirstName() + " Last Name: " + user.getLastName());
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

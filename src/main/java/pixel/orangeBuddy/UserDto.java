@@ -1,25 +1,30 @@
 package pixel.orangeBuddy;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserDto {
 
+    @JsonProperty("SUID")
     private String SUID;
 
+    @JsonProperty("firstName")
     private String firstName;
 
+    @JsonProperty("lastName")
     private String lastName;
 
+    @JsonProperty("userName")
     private String userName;
 
+    @JsonProperty("email")
     private String email;
 
+    @JsonProperty("password")
     private String password;
 
+    //private boolean isSurveyFilled;
 
-    private boolean isSurveyFilled;
-
-    private int loginCount;
-
+    //private int loginCount;
 
     public UserDto(String SUID, String firstName, String lastName, String userName, String email, String password, boolean isSurveyFilled, int loginCount ) {
         this.SUID = SUID;
@@ -28,8 +33,8 @@ public class UserDto {
         this.userName = userName;
         this.email = email;
         this.password = password;
-        this.isSurveyFilled = isSurveyFilled;
-        this.loginCount = loginCount;
+        //this.isSurveyFilled = isSurveyFilled;
+        //this.loginCount = loginCount;
     }
 
     public String getFirstName() {
@@ -80,20 +85,20 @@ public class UserDto {
         this.userName = userName;
     }
 
-    public boolean isSurveyFilled() {
-        return isSurveyFilled;
-    }
+    // public boolean isSurveyFilled() {
+    //     return isSurveyFilled;
+    // }
 
-    public void setSurveyFilled(boolean surveyFilled) {
-        isSurveyFilled = surveyFilled;
-    }
+    // public void setSurveyFilled(boolean surveyFilled) {
+    //     isSurveyFilled = surveyFilled;
+    // }
 
-    public int getLoginCount() {
-        return loginCount;
-    }
+    // public int getLoginCount() {
+    //     return loginCount;
+    // }
 
-    public void setLoginCount(int loginCount) {
-        this.loginCount = loginCount;
-    }
+    // public void setLoginCount(int loginCount) {
+    //     this.loginCount = loginCount;
+    // }
 }
 

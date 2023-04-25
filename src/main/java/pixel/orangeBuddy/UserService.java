@@ -17,8 +17,8 @@ public class UserService {
         user.setUserName(userDto.getUserName());
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
-        user.setSurveyFilled(userDto.isSurveyFilled());
-        user.setLoginCount(userDto.getLoginCount());
+        //user.setSurveyFilled(userDto.isSurveyFilled());
+        //user.setLoginCount(userDto.getLoginCount());
         return userRepository.save(user);
     }
 
