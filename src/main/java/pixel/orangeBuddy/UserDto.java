@@ -24,16 +24,19 @@ public class UserDto {
 
     //private boolean isSurveyFilled;
 
+    private boolean isSurveyFilled;
+
     //private int loginCount;
 
-    public UserDto(String SUID, String firstName, String lastName, String userName, String email, String password, boolean isSurveyFilled, int loginCount ) {
+
+    public UserDto(String SUID, String firstName, String lastName, String userName, String email, String password, boolean isSurveyFilled) {
         this.SUID = SUID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.email = email;
         this.password = password;
-        //this.isSurveyFilled = isSurveyFilled;
+        this.isSurveyFilled = isSurveyFilled;
         //this.loginCount = loginCount;
     }
 
@@ -93,12 +96,12 @@ public class UserDto {
     //     isSurveyFilled = surveyFilled;
     // }
 
-    // public int getLoginCount() {
-    //     return loginCount;
-    // }
-
-    // public void setLoginCount(int loginCount) {
-    //     this.loginCount = loginCount;
-    // }
+//    public int getLoginCount() {
+//        return loginCount;
+//    }
+//
+//    public void setLoginCount(int loginCount) {
+//        this.loginCount = loginCount;
+//    }
 }
 
